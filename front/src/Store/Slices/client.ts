@@ -29,6 +29,9 @@ export const clientSlice = createSlice({
       .addCase(getClientAsync.fulfilled, (state) => {
         state.status = 'idle'
       })
+      .addCase(searchClientsAsync.pending, (state) => {
+        state.searching = 'loading'
+      })
       .addCase(searchClientsAsync.fulfilled, (state) => {
         state.searching = 'idle'
       })
